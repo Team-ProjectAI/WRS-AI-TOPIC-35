@@ -1,0 +1,31 @@
+{
+  "grid_size": [20, 20],
+  "seed": 42,
+  "max_steps": 80,
+  "num_robots": 3,
+  "num_victims": 6,
+  "risk_weight": 8.0,
+  "safety_buffer_radius": 2,
+  "fire_spread_prob": 0.25,
+  "wind_direction": [1, 0],
+  "wind_speed": 1.5,
+  "pso": {
+    "pop_size": 30,
+    "max_gen": 35,
+    "seed": 42
+  },
+  "metrics": [
+    "rescue_success_rate",
+    "total_distance",
+    "fire_risk_exposure",
+    "execution_time_steps",
+    "replanning_count"
+  ],
+  "weights": {
+    "distance": 1.0,
+    "risk": 8.0,
+    "priority": 3.0,
+    "deadline": 2.0
+  }
+}
+

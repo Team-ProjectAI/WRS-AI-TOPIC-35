@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+.venv
+venv/
+env/
+ENV/
+
+# Large Datasets & Raw Data (>3GB)
+wildfire_rescue_swarm/
+data/wildfire_raw/
+data/raw/
+*.tar.gz
+*.zip
+
+# Logs & outputs
+logs/
+*.log
+
+# Caches & IDEs
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
