@@ -588,17 +588,22 @@ with nav_tabs[0]:
     # --------------------------------------------------------------------------
     # EXECUTION ENGINE & CACHING
     # --------------------------------------------------------------------------
-    sim_cache_key = f"res_{sc_active.get('seed')}_{sim_mode_choice}_{risk_weight_val}_{safety_buffer_val}_{wind_spd_val}_{wind_dir_deg_val}"
+    custom_sc = dict(sc_active)
+    # Nếu chọn kịch bản mẫu từ file, giữ nguyên gió chuẩn đã benchmark; nếu sinh ngẫu nhiên thì áp dụng thanh trượt
+    if scenario_source == "🎲 Sinh Ngẫu Nhiên (Tránh biết trước)":
+        custom_sc["wind_direction"] = wind_vec_val
+        custom_sc["wind_speed"] = wind_spd_val
+    elif "wind_speed" not in custom_sc or "wind_direction" not in custom_sc:
+        custom_sc["wind_direction"] = wind_vec_val
+        custom_sc["wind_speed"] = wind_spd_val
+
+    sim_cache_key = f"res_{sc_active.get('seed')}_{sim_mode_choice}_{risk_weight_val}_{safety_buffer_val}_{custom_sc.get('wind_speed')}_{custom_sc.get('wind_direction')}"
 
     if "sim_cache" not in st.session_state or st.session_state.get("last_cache_key") != sim_cache_key:
         exec_cfg = dict(cfg)
         exec_cfg["risk_weight"] = risk_weight_val
         exec_cfg["safety_buffer_radius"] = safety_buffer_val
         exec_cfg["pso"] = {"pop_size": pso_pop_val, "max_gen": pso_gen_val, "seed": sc_active.get("seed", 42)}
-
-        custom_sc = dict(sc_active)
-        custom_sc["wind_direction"] = wind_vec_val
-        custom_sc["wind_speed"] = wind_spd_val
 
         if sim_mode_choice in ("proposed", "baseline"):
             with st.spinner("Đang tính toán quỹ đạo di chuyển và tương tác môi trường..."):
