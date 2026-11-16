@@ -229,27 +229,13 @@ Sau khi chạy lệnh, trình duyệt sẽ tự động mở địa chỉ: `http
 
 ---
 
-## 8. Công Cụ Tự Động Sinh Slide Báo Cáo & File Word
+## 8. Tài Liệu Báo Cáo & Slide Thuyết Trình
 
-Dự án tích hợp sẵn các bộ công cụ tự động hóa tài liệu học thuật:
+Dự án đính kèm sẵn đầy đủ bộ tài liệu học thuật và báo cáo:
 
-### 1. Xuất Bộ Slide Thuyết Trình PowerPoint (`.pptx`):
-```bash
-python build_deck.py
-```
-* Tạo tệp **`TOPIC_35_WILDFIRE_SWARM_PRESENTATION.pptx`** (14 Slides thiết kế chuẩn Bento Grid, Hero Title Banner, nhúng đầy đủ biểu đồ và sơ đồ kiến trúc).
-
-### 2. Xuất Bộ Slide Trình Chiếu Web HTML5 Tương Tác:
-```bash
-python generate_html_slides.py
-```
-* Tạo tệp **`presentation.html`** có thể mở trực tiếp trên trình duyệt Chrome/Firefox/Edge, hỗ trợ phím mũi tên điều hướng, phím `F` phóng to toàn màn hình.
-
-### 3. Xuất Bản Báo Cáo Đồ Án Mẫu Hoàn Chỉnh (`.docx`):
-```bash
-python build_full_report_docx.py
-```
-* Tạo tệp **`BAO_CAO_DO_AN_TOPIC_35_WILDFIRE_RESCUE.docx`** tuân thủ nghiêm ngặt Hướng dẫn CMP169-Project-Guide (Đủ 5 phần, bảng phân công 4 kỹ sư, hình minh họa độ phân giải cao và trích dẫn chuẩn IEEE `[1]` – `[9]`).
+* **Slide thuyết trình PowerPoint (`TOPIC_35_WILDFIRE_SWARM_PRESENTATION.pptx`)**: 14 Slides thiết kế chuẩn Bento Grid, Hero Title Banner, nhúng đầy đủ biểu đồ và sơ đồ kiến trúc.
+* **Slide trình chiếu Web HTML5 (`presentation.html`)**: Trình chiếu trực tiếp trên trình duyệt Chrome/Firefox/Edge, hỗ trợ phím mũi tên điều hướng, phím `F` phóng to toàn màn hình.
+* **Báo cáo đồ án (`BAO_CAO_DO_AN_CO_SO_WILDFIRE_SWARM.md`)**: Báo cáo chi tiết đồ án cơ sở đầy đủ công thức, bảng phân công nhiệm vụ và trích dẫn chuẩn IEEE `[1]` – `[9]`.
 
 ---
 
@@ -303,12 +289,11 @@ wildfire_rescue_swarm/
 │   └── victim.py                   # Mô hình nạn nhân, sức khỏe và cơ chế suy kiệt
 ├── app.py                          # Ứng dụng Streamlit Tactical Command Dashboard
 ├── benchmark_results.csv           # Dữ liệu kết quả thực nghiệm 10 kịch bản test
-├── build_deck.py                   # Script sinh bộ Slide thuyết trình PowerPoint (.pptx)
-├── build_full_report_docx.py       # Script sinh file Báo cáo Đồ án Word (.docx) chuẩn CMP169
-├── generate_html_slides.py         # Script sinh bộ Slide thuyết trình tương tác HTML5
 ├── main.py                         # Điểm khởi chạy CLI kiểm thử Benchmark 10 Scenarios
 ├── requirements.txt                # Danh sách thư viện Python phụ thuộc
 ├── scenario_generator.py           # Bộ sinh 30 kịch bản mô phỏng chuẩn hóa
+├── presentation.html               # Bộ Slide thuyết trình tương tác HTML5
+├── TOPIC_35_WILDFIRE_SWARM_PRESENTATION.pptx # Bộ Slide PowerPoint 14 slides
 └── README.md                       # Tài liệu hướng dẫn sử dụng và triển khai dự án
 ```
 
